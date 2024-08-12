@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Data.Interfaces
 {
-    public interface IReciptDetailRepository : IRepository<ReceiptDetail>
+    public interface IReceiptDetailRepository : IRepository<ReceiptDetail>
     {
 
     }
