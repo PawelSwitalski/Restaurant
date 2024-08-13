@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using Restaurant.Business;
 using Restaurant.Data.Data;
 using Restaurant.Data.Entities;
 
 namespace Restaurant.Data.Test
 {
-    internal static class UnitTestHelper
+    public static class UnitTestHelper
     {
         public static DbContextOptions<RestaurantDbContext> GetUnitTestDbOptions()
         {
@@ -18,6 +20,14 @@ namespace Restaurant.Data.Test
             }
 
             return options;
+        }
+
+        public static IMapper CreateMapperProfile()
+        {
+            var myProfile = new AutomapperProfile();
+            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(myProfile));
+
+            return new Mapper(configuration);
         }
 
         public static void SeedData(RestaurantDbContext context)

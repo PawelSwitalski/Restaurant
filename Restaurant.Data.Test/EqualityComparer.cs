@@ -3,7 +3,7 @@ using Restaurant.Data.Entities;
 
 namespace Restaurant.Data.Test
 {
-    internal class ReceiptEqualityComparer : IEqualityComparer<Receipt>
+    public class ReceiptEqualityComparer : IEqualityComparer<Receipt>
     {
         public bool Equals([AllowNull] Receipt x, [AllowNull] Receipt y)
         {
