@@ -69,6 +69,8 @@ namespace Restaurant.Business.Services
                     product = await productRepository.GetByIdAsync(productId);
 
                     receiptDetail.UnitPrice = product.Price;
+                    // TODO: Change this (DiscountUnitPrice)
+                    receiptDetail.DiscountUnitPrice = product.Price;
                 }
                 catch (NullReferenceException ex)
                 {
