@@ -10,7 +10,6 @@ namespace Restaurant.Business.Services
 {
     public class ProductService : IProductService
     {
-        //protected IUnitOfWork unitOfWork { get; set; }
         protected IProductRepository productRepository { get; set; }
         protected IProductCategoryRepository productCategoryRepository { get; set; }
         protected IMapper mapper { get; set; }
@@ -21,7 +20,6 @@ namespace Restaurant.Business.Services
         {
             this.productRepository = productRepository;
             this.productCategoryRepository = productCategoryRepository;
-            //this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
@@ -117,7 +115,6 @@ namespace Restaurant.Business.Services
 
         public async Task<ProductModel> GetByIdAsync(int id)
         {
-            //Product product = await unitOfWork.ProductRepository.GetByIdWithDetailsAsync(id);
             Product product = await productRepository.GetByIdWithDetailsAsync(id);
 
             return mapper.Map<ProductModel>(product);
