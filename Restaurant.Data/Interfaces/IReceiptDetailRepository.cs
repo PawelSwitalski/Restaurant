@@ -9,6 +9,7 @@ namespace Restaurant.Data.Interfaces
 {
     public interface IReceiptDetailRepository : IRepository<ReceiptDetail>
     {
+        public Task<IEnumerable<ReceiptDetail>> GetAllWithDetailsAsync();
 
     }
 }

@@ -1,4 +1,4 @@
-namespace Restaurant.Data.Test
+namespace Restaurant.Business.Test
 {
     public class Tests
     {
