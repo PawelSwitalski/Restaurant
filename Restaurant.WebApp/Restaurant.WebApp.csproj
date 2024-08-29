@@ -22,8 +22,4 @@
     <ProjectReference Include="..\Restaurant.Business\Restaurant.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\ViewModels\" />
-  </ItemGroup>
-
 </Project>
