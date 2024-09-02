@@ -1,7 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Restaurant.Business.Interfaces;
+using Restaurant.Business.Services;
+using Restaurant.Business;
 using Restaurant.Data.Data;
 using Restaurant.WebApp.Data;
+using Restaurant.Data.Interfaces;
+using Restaurant.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +27,15 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 //builder.Services
 //    .AddIdentity<IdentityUser, IdentityRole>()
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+//builder.Services.AddScoped<IReceiptService, ReceiptService>();
+//builder.Services.AddScoped<IStatisticService, StatisticService>();
+
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutomapperProfile>(), AppDomain.CurrentDomain.GetAssemblies());
 
 
 builder.Services.AddControllersWithViews();
