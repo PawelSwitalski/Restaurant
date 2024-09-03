@@ -7,6 +7,7 @@ using Restaurant.Data.Data;
 using Restaurant.WebApp.Data;
 using Restaurant.Data.Interfaces;
 using Restaurant.Data.Repositories;
+using Restaurant.WebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 //builder.Services
 //    .AddIdentity<IdentityUser, IdentityRole>()
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+builder.Services.AddScoped<Cart>(SessionCart.GetCart);
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -56,6 +63,8 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 

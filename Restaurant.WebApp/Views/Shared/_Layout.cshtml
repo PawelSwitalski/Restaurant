@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Restaurant.WebApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/font-awesome/css/all.min.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -30,6 +31,7 @@
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
+                    @await Component.InvokeAsync("CartSummary")
                 </div>
             </div>
         </nav>
