@@ -25,8 +25,15 @@
                 <div class="col align-content-center">
                     <h6 class="align-content-center m-0">@Model?.Price$</h6>
                 </div>
+                @Model?.Id
                 <div class="col">
-                    <button type="button" class="btn btn-warning btn-sm btn-block">Add</button>
+                    <form id="@Model?.Id" asp-controller="Cart" asp-antiforgery="true">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" name="returnUrl"
+                               value="@ViewContext.HttpContext.Request.Path" />
+
+                        <button type="submit" class="btn btn-warning btn-sm btn-block">Add</button>
+                    </form>
                 </div>
                 
             </div>

@@ -1,6 +1,6 @@
-﻿using Restaurant.Business.Models;
+﻿using Newtonsoft.Json;
+using Restaurant.Business.Models;
 using Restaurant.WebApp.Infrastructure;
-using System.Text.Json.Serialization;
 
 namespace Restaurant.WebApp.Models
 {

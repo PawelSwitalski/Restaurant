@@ -1,4 +1,5 @@
-﻿using Restaurant.Business.Models;
+﻿using Humanizer;
+using Restaurant.Business.Models;
 using Restaurant.Data.Entities;
 
 namespace Restaurant.WebApp.Models
@@ -21,6 +22,10 @@ namespace Restaurant.WebApp.Models
                 line = this.lines.First(p => p.Product.Id == product.Id);
             }
             catch (ArgumentNullException)
+            {
+                line = null;
+            }
+            catch (InvalidOperationException)
             {
                 line = null;
             }

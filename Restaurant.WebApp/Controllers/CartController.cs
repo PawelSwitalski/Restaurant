@@ -30,10 +30,16 @@ namespace Restaurant.WebApp.Controllers
             });
         }
 
+        /// <summary>
+        /// Add products to the Cart.
+        /// </summary>
+        /// <param name="Id">productId</param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Index(int productId, string returnUrl)
+        public async Task<IActionResult> Index(int Id, string returnUrl)
         {
-            ProductModel productModel = await this.productService.GetByIdAsync(productId);
+            ProductModel productModel = await this.productService.GetByIdAsync(Id);
 
             if (productModel != null)
             {
