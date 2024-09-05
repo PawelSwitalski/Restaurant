@@ -22,15 +22,32 @@
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <div class="row text-end float-end">
+
                 <div class="col align-content-center">
                     <h6 class="align-content-center m-0">@Model?.Price$</h6>
                 </div>
-                @Model?.Id
+
+
+
+                <div class="col align-content-center counter-container">
+                    <div class="buttons">
+                        <button class="up-button" onclick="incrementCounter(@Model?.Id)">↑</button>
+                        <button class="down-button" onclick="decreaseCounter(@Model?.Id)">↓</button>
+                    </div>
+                </div>
+
+                <div class="col align-content-center">
+                    <h6 id="product-quantity-display-@Model?.Id" class="align-content-center m-0">1</h6>
+                </div>
+
+
                 <div class="col">
                     <form id="@Model?.Id" asp-controller="Cart" asp-antiforgery="true">
                         <input type="hidden" asp-for="Id" />
                         <input type="hidden" name="returnUrl"
                                value="@ViewContext.HttpContext.Request.Path" />
+                        <input id="product-quantity-value-@Model?.Id" name="quantity" type="hidden" value="1" readonly
+                               @* style="background-color: #f0f0f0; border:none; text-align: center; width: 20px;" *@ />
 
                         <button type="submit" class="btn btn-warning btn-sm btn-block">Add</button>
                     </form>

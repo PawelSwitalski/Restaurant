@@ -20,3 +20,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}

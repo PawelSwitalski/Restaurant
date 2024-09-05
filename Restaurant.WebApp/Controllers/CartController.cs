@@ -35,15 +35,19 @@ namespace Restaurant.WebApp.Controllers
         /// </summary>
         /// <param name="Id">productId</param>
         /// <param name="returnUrl"></param>
+        /// <param name="quantity">How many products add. Default one</param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Index(int Id, string returnUrl)
+        public async Task<IActionResult> Index(
+            int Id,
+            string returnUrl,
+            int quantity = 1)
         {
             ProductModel productModel = await this.productService.GetByIdAsync(Id);
 
             if (productModel != null)
             {
-                this.Cart.AddItem(productModel, 1);
+                this.Cart.AddItem(productModel, quantity);
 
                 return this.View(new CartViewModel
                 {

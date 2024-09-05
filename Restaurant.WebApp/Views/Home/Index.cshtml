@@ -20,3 +20,27 @@
 {
     <partial name="_ProductSummary" model="p" />
 }
+
+
+<script>
+
+    function incrementCounter(quantityId) {
+        ++document.getElementById('product-quantity-value-' + quantityId).value;
+        ++document.getElementById('product-quantity-display-' + quantityId).innerHTML;
+        console.log("ok")
+    }
+
+    function decreaseCounter(id) {
+        console.log("hello-" + id);
+
+        let currentQuantity = parseInt(document.getElementById('product-quantity-value-' + id).value);
+        console.log(currentQuantity);
+
+
+        if (currentQuantity > 1) {
+            document.getElementById('product-quantity-value-' + id).value = currentQuantity - 1;
+            document.getElementById('product-quantity-display-' + id).innerHTML = currentQuantity - 1;
+        }
+    }
+
+</script>
