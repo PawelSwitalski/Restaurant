@@ -9,11 +9,11 @@
 @model ProductModel
 
 
-<div class="container mt-5">
-    <div class="row">
+<div class="container mt-5 card">
+    <div class="row m-3">
 
         <div class="col-sm-4">
-            <img src="products/default-pizza.jpg" class="product-photo">
+            <img src="products/default-pizza.jpg" class="product-photo img-fluid">
         </div>
 
         <div class="col-sm-8">
@@ -27,21 +27,18 @@
                     <h6 class="align-content-center m-0">@Model?.Price$</h6>
                 </div>
 
-
-
-                <div class="col align-content-center counter-container">
-                    <div class="buttons">
-                        <button class="up-button" onclick="incrementCounter(@Model?.Id)">↑</button>
-                        <button class="down-button" onclick="decreaseCounter(@Model?.Id)">↓</button>
-                    </div>
-                </div>
-
                 <div class="col align-content-center">
                     <h6 id="product-quantity-display-@Model?.Id" class="align-content-center m-0">1</h6>
                 </div>
 
+                <div class="col align-content-center counter-container p-0">
+                    <div class="buttons">
+                        <button class="up-button custom-button m-1" onclick="incrementCounter(@Model?.Id)">↑</button>
+                        <button class="down-button custom-button m-1" onclick="decreaseCounter(@Model?.Id)">↓</button>
+                    </div>
+                </div>
 
-                <div class="col">
+                <div class="col align-content-center">
                     <form id="@Model?.Id" asp-controller="Cart" asp-antiforgery="true">
                         <input type="hidden" asp-for="Id" />
                         <input type="hidden" name="returnUrl"

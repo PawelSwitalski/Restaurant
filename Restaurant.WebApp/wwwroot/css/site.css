@@ -30,5 +30,24 @@ body {
 .buttons {
     display: flex;
     flex-direction: column;
-    margin-right: 10px;
+}
+
+.up-button {
+    border-radius: 3px;
+    background-color: white;
+}
+
+.down-button {
+    border-radius: 3px;
+    background-color: white;
+}
+
+.custom-button {
+    transition-duration: 0.4s;
+}
+
+
+.custom-button:hover {
+    background-color: darkorange;
+    color: white;
 }
