@@ -2,7 +2,7 @@
 @model CartViewModel
 
 @{
-    this.Layout = "_CartLayout";
+    this.Layout = "_Layout";
 }
 
 <h2>Your cart</h2>
@@ -49,6 +49,9 @@
 </table>
 <div class="text-center">
     <a class="btn btn-primary" href="@Model?.ReturnUrl">Continue shopping</a>
-    <a class="btn btn-primary" asp-route="checkout">Checkout</a>
+    <form method="post" asp-action="Checkout" asp-controller="Order">
+        <button class="btn btn-primary" type="submit">Checkout</button>
+    </form>
+    
 </div>
 

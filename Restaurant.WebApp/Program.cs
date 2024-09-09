@@ -38,7 +38,11 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+builder.Services.AddScoped<IReceiptRepository, ReceiptRepository>();
+builder.Services.AddScoped<IReceiptDetailRepository, ReceiptDetailRepository>();
+
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IReceiptService, ReceiptService>();
 //builder.Services.AddScoped<IReceiptService, ReceiptService>();
 //builder.Services.AddScoped<IStatisticService, StatisticService>();
 
