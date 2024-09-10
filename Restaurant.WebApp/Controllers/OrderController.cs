@@ -43,7 +43,19 @@ namespace Restaurant.WebApp.Controllers
                 ReceiptModel model = new ReceiptModel();
                 model.CustomerId = 1;
 
-                await receiptService.AddAsync(model);
+                //await receiptService.AddAsync(model);
+                List<ReceiptDetailModel> receipts = new List<ReceiptDetailModel>();
+                foreach (CartLine line in this.cart.Lines)
+                {
+                    receipts.Add(new ReceiptDetailModel
+                    {
+                        ProductId = line.Product.Id,
+                        Quantity = line.Quantity,
+                    });
+                }
+
+                receiptService.AddReceiptWithDetails(model, receipts);
+                
 
                 //foreach (CartLine line in this.cart.Lines)
                 //{

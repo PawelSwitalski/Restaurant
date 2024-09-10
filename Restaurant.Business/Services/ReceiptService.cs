@@ -15,12 +15,29 @@ namespace Restaurant.Business.Services
         protected IProductRepository productRepository { get; set; }
         protected IReceiptDetailRepository receiptDetailRepository { get; set; }
 
-        public ReceiptService(IReceiptRepository receiptRepository, IProductRepository productRepository,  IMapper mapper, IReceiptDetailRepository receiptDetailRepository)
+        public ReceiptService(IReceiptRepository receiptRepository, IProductRepository productRepository, IMapper mapper, IReceiptDetailRepository receiptDetailRepository)
         {
             this.receiptRepository = receiptRepository;
             this.productRepository = productRepository;
             this.mapper = mapper;
             this.receiptDetailRepository = receiptDetailRepository;
+        }
+
+        public async Task AddReceiptWithDetails(ReceiptModel receiptModel, IEnumerable<ReceiptDetailModel> receiptDetails)
+        {
+            var receipt = mapper.Map<Receipt>(receiptModel);
+
+            await receiptRepository.AddAsync(receipt);
+            foreach (var receiptDetail in receiptDetails)
+            {
+                await receiptDetailRepository.AddAsync(new ReceiptDetail
+                {
+                    ReceiptId = receipt.Id,
+                    ProductId = receiptDetail.ProductId,
+                    Quantity = receiptDetail.Quantity,
+                });
+            }
+
         }
 
         public async Task AddAsync(ReceiptModel model)

@@ -4,6 +4,14 @@ namespace Restaurant.Business.Interfaces
 {
     public interface IReceiptService : ICrud<ReceiptModel>
     {
+        /// <summary>
+        /// Asynchronously adds a receipt along with its details to the system.
+        /// </summary>
+        /// <param name="receiptModel">The model representing the receipt to add.</param>
+        /// <param name="receiptDetails">A collection of models representing the details of the receipt.</param>
+        /// <exception cref="MarketException">Thrown if there is an error while adding the receipt or its details.</exception>
+        /// <returns>An asynchronous task.</returns>
+        Task AddReceiptWithDetails(ReceiptModel receiptModel, IEnumerable<ReceiptDetailModel> receiptDetails);
 
         /// <summary>
         /// Asynchronously adds a product to a receipt.
