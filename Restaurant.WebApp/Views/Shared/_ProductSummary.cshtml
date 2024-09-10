@@ -13,7 +13,14 @@
     <div class="row m-3">
 
         <div class="col-sm-4">
-            <img src="products/default-pizza.jpg" class="product-photo img-fluid">
+            @if (Model.ImagePath.Length < 1)
+            {
+                <img class="product-photo img-fluid" src="products/default-pizza.jpg">
+            }
+            else
+            {
+                <img class="product-photo img-fluid" src="@Model.ImagePath">
+            }
         </div>
 
         <div class="col-sm-8">

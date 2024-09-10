@@ -25,6 +25,9 @@ namespace Restaurant.Data.Entities
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Price { get; set; }
 
+        [Column(TypeName = "varchar(200)")]
+        public string ImagePath { get; set; }
+
         public ProductCategory Category { get; set; }
 
         public ICollection<ReceiptDetail> ReceiptDetails { get; set; }
@@ -33,11 +36,12 @@ namespace Restaurant.Data.Entities
         {
         }
 
-        public Product(int id, int productCategoryId, string productName, decimal price) : base(id)
+        public Product(int id, int productCategoryId, string productName, decimal price, string imagePath) : base(id)
         {
             ProductCategoryId = productCategoryId;
             ProductName = productName;
             Price = price;
+            ImagePath = imagePath;
         }
     }
 }

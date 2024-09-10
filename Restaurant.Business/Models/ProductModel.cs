@@ -8,6 +8,8 @@
         public string ProductName { get; set; }
         public decimal Price { get; set; }
 
+        public string ImagePath { get; set; }
+
         public ICollection<int> ReceiptDetailIds { get; set; }
     }
 }
