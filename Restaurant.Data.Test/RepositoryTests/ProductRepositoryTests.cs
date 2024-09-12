@@ -47,6 +47,7 @@ namespace Restaurant.Data.Test.RepositoryTests
                 ProductName = "yogurt",
                 ProductDescription = "Yogurt with strawberries",
                 Price = 3.25M,
+                ImagePath = "products/Pizzas/Pepperoni.png"
             };
 
             await productRepository.AddAsync(product);

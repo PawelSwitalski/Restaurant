@@ -36,8 +36,8 @@ namespace Restaurant.Data.Test
                 new ProductCategory { Id = 1, CategoryName = "Dairy products" },
                 new ProductCategory { Id = 2, CategoryName = "Fruit juices" });
             context.Products.AddRange(
-                new Product { Id = 1, ProductCategoryId = 1, ProductName = "Milk", ProductDescription = "2% fat", Price = 40 },
-                new Product { Id = 2, ProductCategoryId = 2, ProductName = "Orange juice", ProductDescription = "expired date 11.2025", Price = 20 });
+                new Product { Id = 1, ProductCategoryId = 1, ProductName = "Milk", ProductDescription = "2% fat", Price = 40, ImagePath = "products/Pizzas/Pepperoni.png" },
+                new Product { Id = 2, ProductCategoryId = 2, ProductName = "Orange juice", ProductDescription = "expired date 11.2025", Price = 20, ImagePath = "products/Pizzas/Pepperoni.png" });
             context.Receipts.AddRange(
                 new Receipt { Id = 1, CustomerId = 1, OperationDate = new DateTime(2021, 7, 5), IsCheckedOut = true },
                 new Receipt { Id = 2, CustomerId = 1, OperationDate = new DateTime(2021, 8, 10), IsCheckedOut = true },
