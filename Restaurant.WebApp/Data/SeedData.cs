@@ -37,35 +37,40 @@ namespace Restaurant.WebApp.Data
                         ProductCategoryId = 2,
                         ProductName = "Salami",
                         ProductDescription = "Pizza Salami witch cheese and onion stripes.",
-                        Price = 22.5m
+                        Price = 22.5m,
+                        ImagePath = "products/Pizzas/Pepperoni.png"
                     },
                     new Product
                     {
                         ProductCategoryId = 2,
                         ProductName = "Hawaii",
                         ProductDescription = "Pizza with ananas and ham.",
-                        Price = 20.0m
+                        Price = 20.0m,
+                        ImagePath = "products/Pizzas/Hawaiian.png"
                     },
                     new Product
                     {
                         ProductCategoryId = 2,
                         ProductName = "Pizza Margherita",
                         ProductDescription = "Cheese and ketchup",
-                        Price = 15.0m
+                        Price = 15.0m,
+                        ImagePath = "products/Pizzas/Margerita.png"
                     },
                     new Product
                     {
                         ProductCategoryId = 2,
                         ProductName = "Pizza Capricciosa",
                         ProductDescription = "Pizza with champignons and ham.",
-                        Price = 20.0m
+                        Price = 20.0m,
+                        ImagePath = "products/default-pizza.jpg"
                     },
                     new Product
                     {
                         ProductCategoryId = 2,
                         ProductName = "Pizza Prosciutto",
                         ProductDescription = "Pizza with cured ham, cherry tomato, rocket and parmesan flakes",
-                        Price = 30.0m
+                        Price = 30.0m,
+                        ImagePath = "products/default-pizza.jpg"
                     },
 
                     new Product
@@ -73,14 +78,16 @@ namespace Restaurant.WebApp.Data
                         ProductCategoryId = 1,
                         ProductName = "Greek salad",
                         ProductDescription = "Salad with mixed lettuce, cucumber, tomato, feta cheese, onion and vinaigrette dressing",
-                        Price = 10
+                        Price = 10,
+                        ImagePath = "products/default-pizza.jpg"
                     },
                     new Product
                     {
                         ProductCategoryId = 1,
                         ProductName = "Prosciutto Salad",
                         ProductDescription = "Salad with mixed lettuce, rocket, mozzarella cheese, cured ham, cherry tomato, peach, roasted sunflower seeds, parmesan flakes and balsamic sauce",
-                        Price = 13.4m
+                        Price = 13.4m,
+                        ImagePath = "products/default-pizza.jpg"
                     }
                     );
 
